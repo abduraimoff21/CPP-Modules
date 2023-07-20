@@ -6,7 +6,7 @@
 #    By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/16 02:25:43 by dabdurai          #+#    #+#              #
-#    Updated: 2023/07/18 23:08:39 by dabdurai         ###   ########.fr        #
+#    Updated: 2023/07/20 07:46:47 by dabdurai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ all: $(NAME)
 
 $(NAME) : $(OBJ)
 	$(CC) $(OBJ) -o $@
+	clear
+	@echo $(RED) Done!
 
 %.o:%.cpp
 	$(CC) -c $< -o $(<:.cpp=.o)
@@ -29,11 +31,19 @@ $(NAME) : $(OBJ)
 clean :
 	rm -f $(OBJ)
 	clear
-	@echo Cleaned!
+	@echo $(GREEN)Cleaned!
 	
 fclean : clean
 	rm -f $(NAME)
 	clear
-	@echo Cleaned!
+	@echo $(YELLOW)Cleaned!
 	
 re : fclean all
+
+###############################################
+######			    COLORS				 ######
+###############################################
+
+RED     := \033[31m
+GREEN   := \033[32m
+YELLOW  := \033[33m
