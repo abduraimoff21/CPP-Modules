@@ -6,11 +6,12 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:48 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/07/23 04:43:32 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/07/24 03:33:39 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
+#include "phonebook.hpp"
 
 void contacts(Contact &myContact) {
 			std::cout << MAGENTA << "PLEASE FILL THE ALL FIELDS" << std::endl;

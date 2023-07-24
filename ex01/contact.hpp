@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:59 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/07/23 04:44:38 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/07/24 04:23:06 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <iomanip>
 
 # define RED		"\033[31m"
 # define GREEN 		"\033[32m"
@@ -25,11 +26,11 @@
 
 class Contact {
 	public:
-	std::string first_name;
-	std::string last_name;
-	std::string nick_name;
-	std::string darkest_secret;
-	std::string phone_number;
+		std::string first_name;
+		std::string last_name;
+		std::string nick_name;
+		std::string darkest_secret;
+		std::string phone_number;
 };
 void contacts(Contact &myContact);
 
