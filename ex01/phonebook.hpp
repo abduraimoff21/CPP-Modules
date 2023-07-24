@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 02:26:16 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/07/24 04:34:02 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/07/24 12:36:23 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,16 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
+# include "contact.hpp"
 
 class Phonebook {
 	public:
-		Phonebook() : numContacts(0) {}
-		void checkContact() {
-			if (numContacts < maxContacts){
-				numContacts++;
-			}
-		}
+		Phonebook();
+		void displayContacts();
 	private:
-		static const int maxContacts = 8;
 		int numContacts;
-		Contact contacts[maxContacts];
+		Contact contacts[8];
+		void storeContacts(const Contact& myContact);
 };
-void table();
 
 #endif

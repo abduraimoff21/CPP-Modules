@@ -6,39 +6,51 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:48 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/07/24 03:33:39 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/07/24 09:52:49 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 #include "phonebook.hpp"
 
-void contacts(Contact &myContact) {
-			std::cout << MAGENTA << "PLEASE FILL THE ALL FIELDS" << std::endl;
+Contact::Contact(){
+				setContactInfo(first_name, last_name, nick_name,phone_number, darkest_secret);
+			}
+void Contact::setContactInfo(const std::string& first_name, const std::string& last_name, \
+			const std::string& nick_name, const std::string& darkest_secret, \
+			const std::string& phone_number){
+				this->first_name = first_name;
+				this->last_name = last_name;
+				this->nick_name = nick_name;
+				this->phone_number = phone_number;
+				this->darkest_secret = darkest_secret;
+			}
+void Contact::takeInformations() {
+	std::cout << MAGENTA << "PLEASE FILL THE ALL FIELDS" << std::endl;
 			do {
 				std::cout << YELLOW << "ENTER THE FIRST NAME" << std::endl;
-				if (!getline(std::cin, myContact.first_name))
+				if (!getline(std::cin, first_name))
 					exit (0);
-			} while (myContact.first_name.empty());
+			} while (first_name.empty());
 			do {
 				std::cout << YELLOW << "ENTER THE LAST NAME" << std::endl;
-				if (!getline(std::cin, myContact.last_name))
+				if (!getline(std::cin, last_name))
 					exit (0);
-			} while (myContact.last_name.empty());
+			} while (last_name.empty());
 			do {
 				std::cout << YELLOW << "ENTER THE NICK NAME" << std::endl;
-				if (!getline(std::cin, myContact.nick_name))
+				if (!getline(std::cin, nick_name))
 					exit (0);
-			} while (myContact.nick_name.empty());
+			} while (nick_name.empty());
 			do {
 				std::cout << YELLOW << "ENTER THE PHONE NUMBER" << std::endl;
-				if (!getline(std::cin, myContact.phone_number))
+				if (!getline(std::cin, phone_number))
 					exit (0);
-			} while (myContact.phone_number.empty());
+			} while (phone_number.empty());
 			do {
 				std::cout << YELLOW << "ENTER THE DARKEST SECRET" << std::endl;
-				if (!getline(std::cin, myContact.darkest_secret))
+				if (!getline(std::cin, darkest_secret))
 					exit (0);
-			} while (myContact.darkest_secret.empty());
+			} while (darkest_secret.empty());
 			std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
 }

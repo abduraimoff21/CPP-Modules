@@ -6,7 +6,7 @@
 #    By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/16 02:25:43 by dabdurai          #+#    #+#              #
-#    Updated: 2023/07/22 03:55:25 by dabdurai         ###   ########.fr        #
+#    Updated: 2023/07/24 10:07:04 by dabdurai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,9 @@ fclean : clean
 	@echo $(YELLOW)Cleaned!
 	
 re : fclean all
+
+mm:
+	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./phonebook
 
 ###############################################
 ######			    COLORS				 ######
