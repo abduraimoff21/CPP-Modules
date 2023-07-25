@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 02:26:16 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/07/24 12:36:23 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/07/25 08:38:51 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Phonebook {
 	public:
 		Phonebook();
 		void displayContacts();
+		void printContacts(int index);
 	private:
 		int numContacts;
 		Contact contacts[8];

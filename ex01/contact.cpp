@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:48 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/07/24 09:52:49 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/07/25 08:31:29 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,10 @@ void Contact::takeInformations() {
 					exit (0);
 			} while (darkest_secret.empty());
 			std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
+}
+
+void Contact::displayContact() {
+	std::cout << first_name << std::endl;
+	std::cout << last_name << std::endl;
+	std::cout << nick_name << std::endl;
 }
