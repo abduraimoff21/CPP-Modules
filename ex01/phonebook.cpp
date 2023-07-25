@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 02:26:05 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/07/24 12:39:38 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/07/25 07:32:54 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void Phonebook::storeContacts(const Contact& myContact) {
 		numContacts++;
 	}
 	else {
-		
+		for (int i = 0; i < 7; i++){
+			contacts[i] = contacts[i + 1];
+		}
 	}
 }
