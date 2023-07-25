@@ -60,6 +60,7 @@
 		"unordered_map": "cpp",
 		"utility": "cpp",
 		"vector": "cpp",
-		"condition_variable": "cpp"
+		"condition_variable": "cpp",
+		"iomanip": "cpp"
 	}
 }
