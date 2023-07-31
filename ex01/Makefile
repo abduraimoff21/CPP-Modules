@@ -6,11 +6,13 @@
 #    By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/16 02:25:43 by dabdurai          #+#    #+#              #
-#    Updated: 2023/07/24 10:07:04 by dabdurai         ###   ########.fr        #
+#    Updated: 2023/07/31 20:07:10 by dabdurai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = g++ -Wall -Wextra -Werror -std=c++98
+CC = g++ 
+
+CXX = $(CC) -Wall -Wextra -Werror -std=c++98
 
 NAME = phonebook
 
@@ -21,12 +23,12 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(OBJ) -o $@
+	$(CXX) $(OBJ) -o $@
 	clear
 	@echo $(RED) Done!
 
 %.o:%.cpp
-	$(CC) -c $< -o $(<:.cpp=.o)
+	$(CXX) -c $< -o $(<:.cpp=.o)
 
 clean :
 	rm -f $(OBJ)
