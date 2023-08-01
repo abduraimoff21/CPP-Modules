@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:59 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/07/31 21:31:13 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/01 15:35:12 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,31 @@
 class Contact {
 	public:
 		Contact();
-			void takeInformations();
-			void displayContact();
+		~Contact();
+		
+		void takeInformations();
+		void displayContact();
+		
+		// Setters
+		void setFirstName(const std::string& first_name);
+		void setLastName(const std::string& last_name);
+    	void setNickname(const std::string& nick_name);
+    	void setPhoneNumber(const std::string& phone_number);
+    	void setDarkestsecret(const std::string& darkest_secret);
+
+		// Getters
+		std::string getFirstName() const;
+		std::string getLastName() const;
+		std::string getNickName() const;
+		std::string getPhoneNumber() const;
+		std::string getDarkestSecret() const;
+		
 	private:
 		std::string first_name;
 		std::string last_name;
 		std::string nick_name;
 		std::string darkest_secret;
-		
 		std::string phone_number;
-		void setContactInfo(const std::string& first_name, const std::string& last_name, 
-			const std::string& nick_name, const std::string& darkest_secret, 
-			const std::string& phone_number);
 };
 
 #endif
