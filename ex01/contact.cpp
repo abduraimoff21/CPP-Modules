@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:48 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/01 15:44:27 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/01 15:45:12 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 Contact::Contact() {
 	std::cout << "Constructor called" << std::endl;
+	return;
 }
 Contact::~Contact() {
 	std::cout << "Destructor called" << std::endl;
+	return;
 }
 void Contact::takeInformations() {
 	std::cout << MAGENTA << "PLEASE FILL THE ALL FIELDS" << std::endl;
