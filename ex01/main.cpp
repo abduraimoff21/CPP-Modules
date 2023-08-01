@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 03:55:15 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/01 18:34:02 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/01 22:14:05 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main() {
 	std::string command;
 	Contact myContact;
-	// Phonebook myPhonebook;
+	Phonebook myPhonebook;
 	int index;
 	
 	std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
@@ -26,7 +26,10 @@ int main() {
 		}
 		else if (command == "SEARCH"){
 			std::cout << BLUE << "PLEASE ENTER CONTACT INDEX NUMBER" << std::endl;
+			myPhonebook.displayTable();
+			myPhonebook.displayContact();
 			std::cin >> index;
+			
 				
 		}
 		else if (command == "EXIT"){
