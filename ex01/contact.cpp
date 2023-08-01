@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:48 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/01 15:45:12 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/01 15:52:58 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ Contact::~Contact() {
 }
 void Contact::takeInformations() {
 	std::cout << MAGENTA << "PLEASE FILL THE ALL FIELDS" << std::endl;
-		// for (int i = 0; i < 8; i++)
-		// 	{
 				do {
 					std::cout << YELLOW << "ENTER THE FIRST NAME" << std::endl;
 					if (!getline(std::cin, first_name))
@@ -51,11 +49,4 @@ void Contact::takeInformations() {
 						exit (0);
 				} while (darkest_secret.empty());
 				std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
-			// }
-}
-
-void Contact::displayContact() {
-	std::cout << std::setw(10) << first_name << std::endl;
-	std::cout << std::setw(10) << last_name << std::endl;
-	std::cout << std::setw(10) << nick_name << std::endl;
 }

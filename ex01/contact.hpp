@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:59 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/01 15:35:12 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/01 15:53:06 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class Contact {
 		~Contact();
 		
 		void takeInformations();
-		void displayContact();
 		
 		// Setters
 		void setFirstName(const std::string& first_name);
