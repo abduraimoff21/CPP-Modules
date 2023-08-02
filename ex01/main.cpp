@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 03:55:15 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/02 18:20:17 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/02 20:16:56 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main() {
 	std::string command;
+	std::string temp;
 	Contact myContact;
 	Phonebook myPhonebook;
 	int index = Contact::getCount();
@@ -23,7 +24,6 @@ int main() {
 	std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
 	while (getline(std::cin, command)){
 		if (command == "ADD"){
-			std::string temp;
 			std::cout << MAGENTA << "PLEASE FILL THE ALL FIELDS" << std::endl;
 			do {
 				std::cout << YELLOW << "ENTER THE FIRST NAME" << std::endl;
@@ -56,9 +56,10 @@ int main() {
 				myContact.setDarkestsecret(temp);
 			} while (temp.empty());
 			std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
-			if (index > 8)
+			if (index <= 8)
+				index++;
+			else
 				myPhonebook.storeContact(myContact);
-			index++;
 		}
 		else if (command == "SEARCH"){
 			std::cout << BLUE << "PLEASE ENTER CONTACT INDEX NUMBER" << std::endl;
