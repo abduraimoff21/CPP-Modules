@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:48 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/01 22:49:41 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/02 09:55:00 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 #include "phonebook.hpp"
 
 Contact::Contact() {}
-
 Contact::~Contact() {}
+
+int Contact::count = 0;
 
 void Contact::setFirstName(const std::string& first_name){
 	this->first_name = first_name;
@@ -57,41 +58,6 @@ std::string Contact::getDarkestSecret() const {
 	return darkest_secret;
 }
 
-int Contact::count = 0;
-
-void Contact::takeInformations() {
-	std::string temp;
-	std::cout << MAGENTA << "PLEASE FILL THE ALL FIELDS" << std::endl;
-	do {
-		std::cout << YELLOW << "ENTER THE FIRST NAME" << std::endl;
-		if (!getline(std::cin, temp))
-			exit (0);
-		setFirstName(temp);
-	} while (first_name.empty());
-	do {
-		std::cout << YELLOW << "ENTER THE LAST NAME" << std::endl;
-		if (!getline(std::cin, temp))
-			exit (0);
-		setLastName(temp);
-	} while (last_name.empty());
-	do {
-		std::cout << YELLOW << "ENTER THE NICK NAME" << std::endl;
-		if (!getline(std::cin, temp))
-			exit (0);
-		setNickname(temp);
-	} while (nick_name.empty());
-	do {
-		std::cout << YELLOW << "ENTER THE PHONE NUMBER" << std::endl;
-		if (!getline(std::cin, temp))
-			exit (0);
-		setPhoneNumber(temp);
-	} while (phone_number.empty());
-	do {
-		std::cout << YELLOW << "ENTER THE DARKEST SECRET" << std::endl;
-		if (!getline(std::cin, temp))
-			exit (0);
-		setDarkestsecret(temp);
-	} while (darkest_secret.empty());
-	std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
-	count++;
+int Contact::getCount(){
+	return count;
 }

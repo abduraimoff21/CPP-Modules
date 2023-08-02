@@ -6,16 +6,15 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 02:26:05 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/01 22:22:26 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/02 10:18:15 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 #include "contact.hpp"
 
-Phonebook::Phonebook() {}
+Phonebook::Phonebook() : current_index(0){}
 Phonebook::~Phonebook() {}
-
 
 void Phonebook::displayTable() {
 		std::cout << "_____________________________________________" << std::endl;
@@ -23,9 +22,7 @@ void Phonebook::displayTable() {
 		std::cout << "---------- ---------- ----------- -----------" << std::endl;
 }
 
-void Phonebook::displayContact() const {
-	
-	for (int i = 0; i < 9; i++){
-		std::cout << RED << "|" << std::setw(10);
-}
+void Phonebook::storeContact(const Contact& contact) {
+        contacts[current_index] = contact;
+        current_index = (current_index + 1) % 8;
 }

@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:59 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/01 21:23:30 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/02 09:21:07 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class Contact {
 		std::string getNickName() const;
 		std::string getPhoneNumber() const;
 		std::string getDarkestSecret() const;
+		static int getCount();
 		
 	private:
 		std::string first_name;
