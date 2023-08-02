@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 03:55:15 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/02 10:21:33 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/02 18:20:17 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main() {
 	Contact myContact;
 	Phonebook myPhonebook;
 	int index = Contact::getCount();
+	// int count;
 	
 	std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
 	while (getline(std::cin, command)){
@@ -55,16 +56,19 @@ int main() {
 				myContact.setDarkestsecret(temp);
 			} while (temp.empty());
 			std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
-			if (index <= 8)
-				index++;
-			else
+			if (index > 8)
 				myPhonebook.storeContact(myContact);
+			index++;
 		}
 		else if (command == "SEARCH"){
 			std::cout << BLUE << "PLEASE ENTER CONTACT INDEX NUMBER" << std::endl;
 			myPhonebook.displayTable();
-			std::cout << index << std::endl;
-			std::cout << myContact.getFirstName() << std::endl;
+			std::cin >> index;
+			if (index >= 1 && index <= 8){
+				myPhonebook.printContact(index);	
+			}
+			else
+				std::cout << GREEN << "YOU ENTERED WRONG INDEX. PLEASE ENTER BETWEEN 1 AND 8" << std::endl;
 			
 				
 		}
