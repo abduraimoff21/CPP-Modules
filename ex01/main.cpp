@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 03:55:15 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/03 23:27:17 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/04 20:17:00 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,23 @@ int main() {
 	std::string command;
 	std::string temp;
 	Contact myContact;
+	Contact myContac;
 	Phonebook myPhonebook;
 	int index;
 	std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
 
 	while (getline(std::cin, command)){
 		if (command == "ADD"){
-				myContact.takeInformation(myContact);
+			myContac = takeInformation(myContact);
+			myPhonebook.storeContact(myContac);
 		}
 		else if (command == "SEARCH"){
 			myPhonebook.displayTable();
-			std::cout << BLUE << "PLEASE ENTER CONTACT INDEX NUMBER" << std::endl;
+			myPhonebook.printContacts();
+			std::cout << GREEN << "PLEASE ENTER THE CONTACT INDEX > ";
 			std::cin >> index;
-			// myPhonebook.printContact(index, myContact);	
-			std::cout << myContact.getFirstName();
-			// else
-			// 	std::cout << GREEN << "YOU ENTERED WRONG INDEX. PLEASE ENTER BETWEEN 1 AND 8" << std::endl;
+			myPhonebook.printContact(index);
+			// std::cout << GREEN << "YOU ENTERED WRONG INDEX. PLEASE ENTER BETWEEN 1 AND 8" << std::endl;
 			
 				
 		}

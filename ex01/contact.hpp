@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:59 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/03 23:29:29 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/04 18:52:45 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Contact {
 		Contact();
 		~Contact();
 		
-		void takeInformation(Contact contact);
+		// void print(Contact contact);
 		
 		// Setters
 		void setFirstName(const std::string& first_name);
@@ -54,10 +54,9 @@ class Contact {
 		std::string nick_name;
 		std::string darkest_secret;
 		std::string phone_number;
-		// int numContacts;
-		int current_index;
 
 };
-		std::string get_info(std::string output, std::string temp);
+	const std::string get_info(std::string output, std::string temp);
+	Contact takeInformation(Contact contact);
 
 #endif
