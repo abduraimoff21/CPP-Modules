@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:48 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/02 09:55:00 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/03 23:33:20 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,34 @@ std::string Contact::getDarkestSecret() const {
 
 int Contact::getCount(){
 	return count;
+}
+
+std::string get_info(std::string output, std::string temp)
+{
+	std::cout << MAGENTA << "PLEASE FILL THE ALL FIELDS" << std::endl;
+	while(1)
+	{
+		std::cout << YELLOW << output << ": ";
+		if (!getline(std::cin, temp))
+			exit (0);
+		if (temp != "")
+			break;
+	}
+	return (temp);
+}
+void Contact::takeInformation(Contact contact)
+{
+	std::string line;
+	Phonebook 	contacts[8];
+	contacts[current_index] = contact;
+  	current_index = (current_index + 1) % 8;
+
+
+	contact.first_name = get_info("ENTER THE FIRST NAME", line);
+	contact.last_name = get_info("ENTER THE LAST NAME", line);
+	contact.nick_name = get_info("ENTER THE NICK NAME", line);
+	contact.phone_number = get_info("ENTER THE PHONE NUMBER", line);
+	contact.darkest_secret = get_info("ENTER THE DARKEST SECRET", line);
+	std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
+	return;
 }

@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 03:55:15 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/02 20:16:56 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/03 23:27:17 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,58 +18,21 @@ int main() {
 	std::string temp;
 	Contact myContact;
 	Phonebook myPhonebook;
-	int index = Contact::getCount();
-	// int count;
-	
+	int index;
 	std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
+
 	while (getline(std::cin, command)){
 		if (command == "ADD"){
-			std::cout << MAGENTA << "PLEASE FILL THE ALL FIELDS" << std::endl;
-			do {
-				std::cout << YELLOW << "ENTER THE FIRST NAME" << std::endl;
-				if (!getline(std::cin, temp))
-					exit (0);
-				myContact.setFirstName(temp);
-			} while (temp.empty());
-			do {
-				std::cout << YELLOW << "ENTER THE LAST NAME" << std::endl;
-				if (!getline(std::cin, temp))
-					exit (0);
-				myContact.setLastName(temp);
-			} while (temp.empty());
-			do {
-				std::cout << YELLOW << "ENTER THE NICK NAME" << std::endl;
-				if (!getline(std::cin, temp))
-					exit (0);
-				myContact.setNickname(temp);
-			} while (temp.empty());
-			do {
-				std::cout << YELLOW << "ENTER THE PHONE NUMBER" << std::endl;
-				if (!getline(std::cin, temp))
-					exit (0);
-				myContact.setPhoneNumber(temp);
-			} while (temp.empty());
-			do {
-				std::cout << YELLOW << "ENTER THE DARKEST SECRET" << std::endl;
-				if (!getline(std::cin, temp))
-					exit (0);
-				myContact.setDarkestsecret(temp);
-			} while (temp.empty());
-			std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
-			if (index <= 8)
-				index++;
-			else
-				myPhonebook.storeContact(myContact);
+				myContact.takeInformation(myContact);
 		}
 		else if (command == "SEARCH"){
-			std::cout << BLUE << "PLEASE ENTER CONTACT INDEX NUMBER" << std::endl;
 			myPhonebook.displayTable();
+			std::cout << BLUE << "PLEASE ENTER CONTACT INDEX NUMBER" << std::endl;
 			std::cin >> index;
-			if (index >= 1 && index <= 8){
-				myPhonebook.printContact(index);	
-			}
-			else
-				std::cout << GREEN << "YOU ENTERED WRONG INDEX. PLEASE ENTER BETWEEN 1 AND 8" << std::endl;
+			// myPhonebook.printContact(index, myContact);	
+			std::cout << myContact.getFirstName();
+			// else
+			// 	std::cout << GREEN << "YOU ENTERED WRONG INDEX. PLEASE ENTER BETWEEN 1 AND 8" << std::endl;
 			
 				
 		}
