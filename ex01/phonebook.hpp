@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 02:26:16 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/04 19:02:16 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/04 22:20:07 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ class Phonebook {
 		void storeContact(const Contact& contact);
 		void printContact(int index);
 		void printContacts();
+		void print(int index);
+		void extra(Contact contact);
+		std::string cutInfo(std::string temp);
 		
 		Contact contacts[8];
 	private:

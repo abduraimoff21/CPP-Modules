@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:48 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/04 18:52:40 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/04 22:47:17 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,3 @@ Contact takeInformation(Contact contact)
 	std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
 	return (contact);
 }
-// void Contact::print(Contact contact){
-// 	std::cout << YELLOW << contact.getFirstName() << std::endl;
-// 	std::cout << YELLOW << contact.getLastName() << std::endl;
-// 	std::cout << YELLOW << contact.getNickName() << std::endl;
-// 	std::cout << YELLOW << contact.getPhoneNumber() << std::endl;
-// }
