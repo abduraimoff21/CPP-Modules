@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 02:26:16 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/06 18:28:31 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/06 20:15:10 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ class Phonebook {
 		int numContacts;
 		int current_index;
 };
-// int getIntegerLength(int number);
 
 #endif

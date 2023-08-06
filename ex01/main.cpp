@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 03:55:15 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/06 18:58:14 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/06 20:15:03 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ int main() {
 			exit (0);
 		else
 			printerror();
-		// else
-		// 	showError = true;
 	}
 	return 0;	
 }
