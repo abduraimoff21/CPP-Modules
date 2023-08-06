@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 02:26:05 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/06 20:14:50 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/06 20:29:59 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@ Phonebook::Phonebook() : numContacts(0), current_index(0){}
 Phonebook::~Phonebook() {}
 
 void Phonebook::displayInform() {
-	if (numContacts == 0)
-		std::cout << GREEN << "THERE IS NOT ANY SAVED CONTACTS" << std::endl; 
-	std::cout << "_____________________________________________" << std::endl;
-	std::cout << "|  INDEX   |FIRST NAME|LAST NAME | NICK NAME|" << std::endl;
-	std::cout << "---------- ---------- ----------- -----------" << std::endl;
-	for (int i = 0; i < numContacts; ++i)
-		printContact(i);
+		std::cout << "_____________________________________________" << std::endl;
+		std::cout << "|  INDEX   |FIRST NAME|LAST NAME | NICK NAME|" << std::endl;
+		std::cout << "---------- ---------- ----------- -----------" << std::endl;
+		for (int i = 0; i < numContacts; ++i)
+			printContact(i);
 }
 
 void Phonebook::storeContact(const Contact& contact) {
@@ -56,23 +54,26 @@ void Phonebook::validIndex(int index){
 	std::string number;
 	int temp;
 	
-	std::cout << GREEN << "PLEASE ENTER THE CONTACT INDEX > ";
-	while (getline(std::cin, number)){
-		temp = number.length();
-		if (temp == 1)
-			index = atoi(number.c_str());
-		if (index == 0)
-			index = 9;
-		if (index <= numContacts && index < 8 && temp == 1)
-		{
-			print(index);
-			break;
-		}
-		else
-		{
-			std::cout << GREEN << "PLEASE ENTER THE CONTACT INDEX > ";
+	if (numContacts > 0)
+	{
+		std::cout << GREEN << "PLEASE ENTER THE CONTACT INDEX > ";
+		while (getline(std::cin, number)){
+			temp = number.length();
+			if (temp == 1)
+				index = atoi(number.c_str());
+			if (index == 0)
+				index = 9;
+			if (index <= numContacts && index < 8 && temp == 1)
+			{
+				print(index);
+				break;
+			}
+			else
+				std::cout << GREEN << "PLEASE ENTER THE CONTACT INDEX > ";
 		}
 	}
+	else
+		std::cout << GREEN << "THERE IS NOT ANY SAVED CONTACTS" << std::endl;
 }
 void Phonebook::print(int index){
 	std::cout << YELLOW << "FIRST NAME: "<< BLUE << contacts[index - 1].getFirstName() << std::endl;
