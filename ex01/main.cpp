@@ -6,48 +6,47 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 03:55:15 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/04 22:47:06 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/06 18:58:14 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 #include "phonebook.hpp"
 
+void printerror(){
+	// if ((command != "SEARCH" && command != "ADD" && command != "EXIT") || (command == "")){
+		std::cout << GREEN << "INVALID COMMAND. PLEASE ENTER THE VALID COMMAND" << std::endl;
+		// std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
+	// }
+}
+
 int main() {
 	std::string command;
-	std::string temp;
 	Contact myContact;
-	Contact myContac;
 	Phonebook myPhonebook;
 	int index = 0;
-	std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
-	while (getline(std::cin, command)){
-		if (command == "ADD"){
-			myContac = takeInformation(myContact);
-			myPhonebook.storeContact(myContac);
-		}
+	// bool showError = true;
+	// std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
+	while (1){
+		std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
+		if(!getline(std::cin, command))
+			break;
+		// if (showError) {
+        // 	printerror();
+        //     showError = false;
+        // }
+		if (command == "ADD")
+			myPhonebook.storeContact(takeInformation(myContact));
 		else if (command == "SEARCH"){
-			myPhonebook.displayTable();
-			myPhonebook.printContacts();
-			std::cout << GREEN << "PLEASE ENTER THE CONTACT INDEX > ";
-			std::cin >> index;
-			if (check1 != 1)
-				std::cout << GREEN << "YOU ENTERED WRONG INDEX. PLEASE ENTER BETWEEN 1 AND 8" << std::endl;
-			else if (index < 8)
-				myPhonebook.print(index);
-			else
-				std::cout << GREEN << "YOU ENTERED WRONG INDEX. PLEASE ENTER BETWEEN 1 AND 8" << std::endl;
-			
-				
+			myPhonebook.displayInform();
+			myPhonebook.validIndex(index);
 		}
-		else if (command == "EXIT"){
+		else if (command == "EXIT")
 			exit (0);
-		}
-		else {
-			std::cout << GREEN << "INVALID COMMAND. PLEASE ENTER THE VALID COMMAND" << std::endl;
-			std::cout << BLUE << "ENTER " << RED "ADD SEARCH EXIT" << BLUE << " COMMANDS IN CAPITAL LETTERS" << std::endl;
-			
-		}
+		else
+			printerror();
+		// else
+		// 	showError = true;
 	}
 	return 0;	
 }
