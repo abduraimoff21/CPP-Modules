@@ -6,7 +6,7 @@
 /*   By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 01:15:48 by dabdurai          #+#    #+#             */
-/*   Updated: 2023/08/06 20:14:59 by dabdurai         ###   ########.fr       */
+/*   Updated: 2023/08/06 21:53:16 by dabdurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 Contact::Contact() {}
 Contact::~Contact() {}
-
-int Contact::count = 0;
 
 void Contact::setFirstName(const std::string& first_name){
 	this->first_name = first_name;
@@ -58,9 +56,6 @@ std::string Contact::getDarkestSecret() const {
 	return darkest_secret;
 }
 
-int Contact::getCount(){
-	return count;
-}
 
 const std::string get_info(std::string output, std::string temp)
 {

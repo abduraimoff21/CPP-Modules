@@ -6,11 +6,11 @@
 #    By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/16 02:25:43 by dabdurai          #+#    #+#              #
-#    Updated: 2023/07/31 20:07:10 by dabdurai         ###   ########.fr        #
+#    Updated: 2023/08/06 21:39:46 by dabdurai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = g++ 
+CC = c++ 
 
 CXX = $(CC) -Wall -Wextra -Werror -std=c++98
 
