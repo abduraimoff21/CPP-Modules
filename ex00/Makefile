@@ -6,7 +6,7 @@
 #    By: dabdurai <dabdurai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/16 02:24:29 by dabdurai          #+#    #+#              #
-#    Updated: 2023/08/06 21:43:27 by dabdurai         ###   ########.fr        #
+#    Updated: 2023/08/07 14:27:16 by dabdurai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,12 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $@
+	$(CXX) $(OBJ) -o $@
 	clear
 	@echo $(RED) Done!
 	
 %.o:%.cpp
-	$(CC) -c $< -o $(<:.cpp=.o)
+	$(CXX) -c $< -o $(<:.cpp=.o)
 
 clean: 
 	rm -f $(OBJ)
